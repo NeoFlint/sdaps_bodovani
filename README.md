@@ -1,0 +1,1 @@
+# sdaps_bodovani
