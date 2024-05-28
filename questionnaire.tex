@@ -1,0 +1,161 @@
+\documentclass[
+	13pt,
+	a4paper,
+	oneside]{sdapsclassic} % tvorba dotazniku
+
+\usepackage[utf8]{inputenc} 
+\usepackage{sdapsbase} 
+\usepackage{sdapsarray} % sdaps tabulky
+\usepackage{multicol}
+\usepackage{geometry}
+
+\usepackage{graphicx} % umozni vkladani obrazku s upresnenim cesty
+\graphicspath{{./images/}}
+
+\usepackage{sdapspdf} % umozni tvorbu pdf pomoci sdaps, ktery to sam neumi
+\ExplSyntaxOn
+\sdaps_context_append:nn{*}{pdf_form=true}
+\ExplSyntaxOff
+
+\author{VOŠPlzeň}
+\title{Záznamový arch DDH}
+
+\setcounter{secnumdepth}{0} % skryje cislovani kapitol v textu, skryti jen v obsahu se dela pomoci hvezdicky via "\section*{Nazev sekce}"
+
+\begin{comment}´
+ODKAZY
+https://sdaps.org/
+https://sdaps.org/class-doc/index.html
+sdapsclassic class moznosti - viz https://sdaps.org/class-doc/sdapsclassic.html
+\end{comment}
+
+\begin{document}
+	
+	\begin{multicols}{6}
+	% Kód uchazeče: \dots\dots\dots
+	% takto textbox k vyplneni tuzkou
+	\textbox*{1cm}{ID uchazeče:}
+	%\medskip % s odsazenim dolu o cca 1/2 radku
+	\end{multicols}
+		
+	
+
+    \section{Odpovědi k přijímacímu testu}
+    \subsection{Instrukce:}
+    Správné odpovědi označte křížkem. U každé otázky je \textbf{jediná správná odpověď}. V případě omylu špatnou odpověď zaplňte a křížkem označte správnou odpověď. (Takto upravenou otázku už nelze nijak upravit.)
+    \subsection{Příklad:}
+    % \includegraphics[width=0.4cm, height=0.4cm]{kolecko_selected} ...obrazek
+    \checkedbox*{} správná volba,  \correctedbox*{} zrušená volba
+    
+    \medskip % s odsazenim dolu o cca 1/2 radku
+
+    % [noinfo] odstrani defaultni hlasku o automatickem zpracovani formulare
+
+    \begin{questionnaire}[noinfo]
+    \begin{Form}
+    \begin{multicols}{4}
+
+        \begin{optiongroup}{Otázky za 1 bod:}
+	          \choice{A}
+	          \choice{B}
+	          \choice{C}
+	          \choice{D}
+	          \question{1}
+	          \question{2}
+	          \question{3}
+	          \question{4}
+	          \question{5}
+	          \question{6}
+	          \question{7}
+	          \question{8}
+	          \question{9}
+	          \question{10}
+	          \question{11}
+	          \question{12}
+	          \question{13}
+	          \question{14}
+	          \question{15}
+         \end{optiongroup}
+        
+	    \begin{optiongroup}{Otázky za 2 body:}
+			\choice{A}
+			\choice{B}
+			\choice{C}
+			\choice{D}
+			\question{16}
+			\question{17}
+			\question{18}
+			\question{19}
+			\question{20}
+			\question{21}
+			\question{22}
+			\question{23}
+			\question{24}
+			\question{25}
+			\question{26}
+			\question{27}
+			\question{28}
+			\question{29}
+			\question{30}
+        \end{optiongroup}
+        
+		\begin{optiongroup}{Otázky za 2 body:}
+			\choice{A}
+			\choice{B}
+			\choice{C}
+			\choice{D}
+            \question{31}
+            \question{32}
+            \question{33}
+            \question{34}
+            \question{35}
+            \question{36}
+            \question{37}
+            \question{38}
+            \question{39}
+            \question{40}
+            \question{41}
+            \question{42}
+            \question{43}
+            \question{44}
+            \question{45}
+		\end{optiongroup}
+    
+		\begin{optiongroup}{Otázky za 1 bod:}
+			\choice{A}
+			\choice{B}
+			\choice{C}
+			\choice{D}
+            \question{46}
+            \question{47}
+            \question{48}
+            \question{49}
+            \question{50}
+            \question{51}
+            \question{52}
+            \question{53}
+            \question{54}
+            \question{55}
+            \question{56}
+            \question{57}
+            \question{58}
+            \question{59}
+            \question{60}
+        \end{optiongroup}
+
+        \end{multicols}
+
+        \end{Form}
+    	\end{questionnaire}
+        
+
+        \section{Vyhodnocení}
+
+        \bigskip
+        \begin{flushright}
+        Získaný počet bodů: \dots\dots\dots
+        \end{flushright}
+
+\end{document}
+
+

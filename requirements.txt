@@ -1,0 +1,6 @@
+Python==3.8.10
+sdaps==1.9.7
+
+pandas==1.5.3
+pyexcel==0.7.0
+pyexcel-ods==0.6.0
