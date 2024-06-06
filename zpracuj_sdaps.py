@@ -8,7 +8,7 @@ import pyexcel as pe 						# pip install pyexcel
 from pyexcel_ods import save_data			# pip install pyexcel_ods
 import pandas								# pip install pandas
 
-template_file = 'spravne_odpovedi.ods'		# klic spravnych odpovedi
+template_file = 'spravne_odpovedi_sifra-test.ods'		# klic spravnych odpovedi
 input_file = 'data_sdaps.csv'				# SDAPS data z recognice - prvni na radce musi byt cislo respondenta!
 output_file = 'vysledky.ods'				# zde budou celkove vysledky prijimacich zkousek
 
@@ -16,8 +16,7 @@ output_file = 'vysledky.ods'				# zde budou celkove vysledky prijimacich zkousek
 # TODO: hlasky o prubehu, kontrola stejneho poctu otazek ve vstupnich souborech
 # TODO: IDENTIFIKACE UCASTNIKU v CSV !!! 
 # TODO: venv
-# TODO: git
-
+# TODO: ERRORY!
 
 # Overi existenci potrebnych souboru a nacte z nich data.
 def load_inputs():
