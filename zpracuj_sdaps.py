@@ -8,15 +8,15 @@ import pyexcel as pe 						# pip install pyexcel
 from pyexcel_ods import save_data			# pip install pyexcel_ods
 import pandas								# pip install pandas
 
-template_file = 'spravne_odpovedi_sifra-test.ods'		# klic spravnych odpovedi
+template_file = 'spravne_odpovedi.ods'		# klic spravnych odpovedi - pripraven jako rozsifrovany!
 input_file = 'data_sdaps.csv'				# SDAPS data z recognice - prvni na radce musi byt cislo respondenta!
-output_file = 'vysledky.ods'				# zde budou celkove vysledky prijimacich zkousek
+output_file = 'vysledky.ods'				# zde budou celkove vysledky prijimacich zkousek - zasifrovat!
 
-
+# -------------------------------
 # TODO: hlasky o prubehu, kontrola stejneho poctu otazek ve vstupnich souborech
-# TODO: IDENTIFIKACE UCASTNIKU v CSV !!! 
-# TODO: venv
-# TODO: ERRORY!
+# TODO: venv?
+# TODO: identifikace ucastniku v CSV - zatim resena rucnim prepisovanim v GUI - ale celkem to jde
+# -------------------------------
 
 # Overi existenci potrebnych souboru a nacte z nich data.
 def load_inputs():
@@ -72,8 +72,10 @@ def data_processing(csv_data=None, correct_answers=None):
 
 	for line in csv_data[1:]:			# zahlavi se vynechava, neobsahuje data
 
-		id = line[0]
-		empty = line[1]
+		# rozbor metadat odpovedi
+		# id = line[0] 					# pokud CSV obsahuje skutecna questionnaire_id
+		id = line[9]					# pokud je ID jako 10. hodnota na radce (sloupec 0_1_1) - pripraveno ve formu jako "ID uchazece"
+		empty = line[2]
 		valid = line[3]
 		recognized = line[4]
 		verified = line[6]
@@ -84,7 +86,7 @@ def data_processing(csv_data=None, correct_answers=None):
 
 		# ted samotne odpovedi (q_num = cislo otazky)
 		#for q_num in range(1,len(question_header)):
-		for i in range(7,col_number,1): 	# prvni cast jsou identifikacni informace --> preskakujeme
+		for i in range(12,col_number,1): 	# prvni cast jsou identifikacni informace --> preskakujeme
 			if 'rev' in csv_header[i]: 		# review sloupce data neobsahuje --> preskakujeme
 				continue
 			else:
@@ -93,7 +95,7 @@ def data_processing(csv_data=None, correct_answers=None):
 				test = int(t)
 				section = int(s)
 				question = int(q)
-				question_number = question_header.index(csv_header[i]) + 1			# zjisteni globalniho cisla otazky
+				question_number = question_header.index(csv_header[i])				# zjisteni globalniho cisla otazky
 
 				# nacteni spravne odpovedi a zaznam bodu za otazku
 				value, correct_choice = correct_answers[str(question_number)]		# klic je ve slovniku bohuzel v podobe stringu
