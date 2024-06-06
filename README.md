@@ -1,5 +1,5 @@
 # SDAPS_bodovani.py
->>> Skript pro bodové vyhodnocení formulářů přijímacích zkoušek, založených na CSV datech OMR rekognice programu SDAPS <<<
+Skript pro bodové vyhodnocení formulářů přijímacích zkoušek, založených na CSV datech OMR rekognice programu SDAPS
 
 POUŽITÍ SKRIPTU
 ---------------
@@ -24,22 +24,22 @@ Vstupy
 ------
 Vstupní soubory je nutné připravit do stejného adresáře se skriptem a respektovat jejich přesné názvy včetně koncovky souboru.
 
-spravne_odpovedi.ods => 		...klíč správných odpovědí a bodového hodnocení - musí být připraven jako rozšifrovaný!
-data_sdaps.csv =>  				...SDAPS data z recognice - questionnaire_id nepoužíváme, zatím je tedy ID uchazeče ve sloupci 0_1_1
+- spravne_odpovedi.ods => 		...klíč správných odpovědí a bodového hodnocení - musí být připraven jako rozšifrovaný!
+- data_sdaps.csv =>  				...SDAPS data z recognice - questionnaire_id nepoužíváme, zatím je tedy ID uchazeče ve sloupci 0_1_1
 
 
 Výstupy
 -------
-=> vysledky.ods			...zde budou celkove vysledky prijimacich zkousek 
+- => vysledky.ods			...zde budou celkove vysledky prijimacich zkousek 
 
 Všechny vstupní i výstupní soubory se předpokládají ve stejném adresáři spolu se skriptem.
 
 
 Jazyky, běhové prostředí, závislosti
 ------------------------------------
-Python 3
-pyexcel
-pyexcel_ods 
+Python 3, 
+pyexcel, 
+pyexcel_ods, 
 pandas
 
 
