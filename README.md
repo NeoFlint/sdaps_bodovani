@@ -1,38 +1,41 @@
 # SDAPS_bodovani.py
-Skript pro bodové vyhodnocení formulářů přijímacích zkoušek, založených na CSV datech OMR rekognice programu SDAPS
+Skript pro bodové vyhodnocení formulářů přijímacích zkoušek, založené na CSV datech OMR rekognice programu SDAPS.
+Homepage programu SDAPS včetně návodů zde: https://sdaps.org/
 
 POUŽITÍ SKRIPTU
 ---------------
-1. do stejného adresáře se skriptem připravit/zeditovat tabulku spravne_odpovedi.ods - POZOR! sloupce nepřehazovat ani nemazat, skript s nimi počítá tak jak jsou (pořadí i jméno)
-2. do stejného adresáře se skriptem nahrát soubor data_sdaps.csv obsahující data z recognice programu SDAPS
-3. otevřít terminál v tomto adresáři a spustit tento skript --> náhled výsledků a případné chyby budou v terminálu.
+1. do adresáře SDAPS projektu s CSV daty provedené rekognice formulářů nakopírovat tento skript
+
+	data_sdaps.csv
+
+2. přidat rozšifrovaný soubor s bodovou hodnotou a s klíčem správných odpovědí - POZOR! sloupce nepřehazovat ani nemazat, skript s nimi počítá tak jak jsou (pořadí i jméno)
+
+	spravne_odpovedi.ods
+
+3. zkontrolovat/zeditovat tento skript, hlavně cesty a názvy vstupních souborů
+4. otevřít terminál v tomto adresáři a spustit skript --> náhled výsledků a případné chyby budou v terminálu.
 
 	python zpracuj_sdaps.py
 
-4. doupravit vysledky.ods - vhodná je šířka všech sloupců na 0.7cm, ukotvit 1. sloupec a roztáhnout první a poslední sloupec + zašifrovat 
-5. na papírové formuláře dopsat bodové hodnocení a vše zkontrolovat
+4. doupravit výstup, tj. soubor vysledky.ods - vhodná je šířka sloupců 1-60 na 0.7cm + zašifrovat 
+
+	vysledky_sifra.ods
+
+5. na papírové formuláře dopsat bodové hodnocení a vše zkontrolovat + odstranit dočasné soubory
 
 
-Podrobnosti, vlastnosti skriptu
--------------------------------
-- umí zpracovat rozdílnou bodou hodnotu jednotlivých otázek (viz editace souboru spravne_odpovedi.ods)
+Vlastnosti skriptu, poznámky
+----------------------------
+- umí zpracovat rozdílnou bodovou hodnotu jednotlivých otázek (viz editace souboru spravne_odpovedi.ods)
 - umí pracovat s větším počtem sekcí formuláře skládaného v programu LaTex
 - je připraven na použití formulářů s reálnými questionnaire_id
 
-
-Vstupy
-------
-Vstupní soubory je nutné připravit do stejného adresáře se skriptem a respektovat jejich přesné názvy včetně koncovky souboru.
-
-- spravne_odpovedi.ods => 		...klíč správných odpovědí a bodového hodnocení - musí být připraven jako rozšifrovaný!
-- data_sdaps.csv =>  				...SDAPS data z recognice - questionnaire_id nepoužíváme, zatím je tedy ID uchazeče ve sloupci 0_1_1
+SDAPS questionnaire_id nepoužíváme, zatím je tedy ID uchazeče ve sloupci 0_1_1, kam jej ručně přepsal zpracovatel při kontrole recognice (viz sdaps gui).
 
 
-Výstupy
--------
-- => vysledky.ods			...zde budou celkove vysledky prijimacich zkousek 
-
-Všechny vstupní i výstupní soubory se předpokládají ve stejném adresáři spolu se skriptem.
+Upozornění
+----------
+Výsledky přijímacích zkoušek podléhají utajení (manipulace, žaloby, vydírání, kompromitace školy apod.) - proto se ujistěte, že výstupem je pouze a jen zašifrovaná tabulka ODS, všechny ostatní dočasné soubory s výsledky je potřeba bezpečně smazat (Shift + Delete).
 
 
 Jazyky, běhové prostředí, závislosti
