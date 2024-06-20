@@ -92,6 +92,10 @@ def data_processing(csv_data=None, correct_answers=None):
 		valid = line[3]
 		recognized = line[4]
 		verified = line[6]
+		
+		if id in marks.keys():			# pokud nebylo upraveno ID uchazece, SDAPS generuje do csv hodnotu 1 - nutno resit a v SDAPS GUI doplnit!
+			print(f"ID {id} jiz existuje. Preskakuji... Zkontrolujte ID ucastniku ve vstupnich souborech!")
+			continue
 
 		choices = ('None','a','b','c','d','e','f','g','h','i','j')		# 10 moznosti na otazku, 
 		choices_else = ('invalid','error-multi-select','NA', None)		# -1=NA=nevyplneno, -2=error-multi-select=nevalidni
@@ -117,7 +121,7 @@ def data_processing(csv_data=None, correct_answers=None):
 				value, correct_choice = correct_answers[str(question_number)]		# klic je ve slovniku bohuzel v podobe stringu
 				answer_num = int(line[i]) if line[i].isdigit() else 0				# pokud je v odpovedi neciselna hodnota --> ztracena otazka, 0b
 				answer = choices[answer_num]										# drivejsi SDAPS daval jen ciselnou hodnotu odpovedi, ted uz tu mame i textove vystupy
-				#print(f"id: {id}, question_number: {question_number}, answer_num: {answer_num}, answer: {answer}, correct_choice: {correct_choice}")
+				# print(f"id: {id}, question_number: {question_number}, answer_num: {answer_num}, answer: {answer}, correct_choice: {correct_choice}")
 				
 				if(correct_choice == answer):
 					values[question_number] = value

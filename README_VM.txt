@@ -3,7 +3,10 @@ ELEKTRONICKÉ VYHODNOCENÍ PAPÍROVÝCH FORMULÁŘŮ
 Virtualizační platforma VirtualBox 7.0.18
 připravené virtuální PC "Xubuntu_22-04" (export v souboru .ova - stačí importovat a spustit)
 - na ploše je připravený návod a nainstalováno vše potřebné (systémové nástroje, SDAPS rekognice, skript pro spočítání výsledků) 
-- test 18.6.2024: OK?
+- test 20.6.2024: OK
+Pro přenos souborů do virtuálního PC (dále VM) lze využít Přídavky pro hosta a soubory přetáhnout myší, další možností je sdílená složka a nakonec cloud (googledisk, dropbox apod.) Virtuální PC je zcela oddělené od hostitelského, proto je principálně složité zprovoznit přenášení soubory z flešky přímo do VM. Tento návod je na ploše přímo uvnitř VM, takže pro samotné zpracování je kopírování příkazů dostupné vždy i bez sítě.
+
+!!! Po provední zpracování nezapomeňte po sobě smazat všechny nezašifrované soubory se správnými odpověďmi a s výsledky přijímacího řízení !!!
 
 Homepage systémů, soubory ke stažení
 -----------------------------------
